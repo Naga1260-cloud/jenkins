@@ -1,0 +1,19 @@
+Jenkins instalation on linux
+
+pre requisites: 
+	- update linux machine
+	- 4 gb ram 50 gb hard disk
+	- sudo yum update -y
+ 	- sudo yum upgrade -y
+	- sudo yum install git -y
+
+1.java must be installed .
+	- user path must set : /usr/lib/jvm
+
+2.jenkins must be installed
+
+3. enable jenkins
+
+4. start jenkins
+
+
