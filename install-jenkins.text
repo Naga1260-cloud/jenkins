@@ -8,12 +8,22 @@ pre requisites:
 	- sudo yum install git -y
 
 1.java must be installed .
+	$ sudo yum install java -y
+	$ java -version
 	- user path must set : /usr/lib/jvm
 
 2.jenkins must be installed
+	$ sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/rpm-stable/jenkins.repo
+	$ sudo dnf upgrade
+	$ sudo dnf install fontconfig java-21-openjdk
+	$ sudo dnf install jenkins
+	$ jenkins --version
+	$ sudo systemctl daemon-reload
 
 3. enable jenkins
-
+	$ sudo systemctl enable jenkins
 4. start jenkins
+	$ sudo systemctl start jenkins
+	$ sudo systemctl status jenkins
 
 
