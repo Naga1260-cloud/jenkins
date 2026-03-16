@@ -1,29 +1,51 @@
 Jenkins instalation on linux
 
 pre requisites: 
-	- update linux machine
+	- update ubuntu machine
 	- 4 gb ram 50 gb hard disk
-	- sudo yum update -y
- 	- sudo yum upgrade -y
-	- sudo yum install git -y
+	- sudo apt-get update -y
+ 	- sudo apt upgrade -y
+	- sudo apt install git -y
 
 1.java must be installed .
-	$ sudo yum install java -y
-	$ java -version
+	$ sudo apt install fontconfig openjdk-21-jre -y
+	$ java --version
 	- user path must set : /usr/lib/jvm
 
 2.jenkins must be installed
-	$ sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/rpm-stable/jenkins.repo
-	$ sudo dnf upgrade
-	$ sudo dnf install fontconfig java-21-openjdk
-	$ sudo dnf install jenkins
+	$ sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+  
+	$ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+	$ sudo apt update
+	
+	$ sudo apt install jenkins -y
 	$ jenkins --version
-	$ sudo systemctl daemon-reload
 
 3. enable jenkins
 	$ sudo systemctl enable jenkins
+	
 4. start jenkins
 	$ sudo systemctl start jenkins
+	
 	$ sudo systemctl status jenkins
+
+	for ec2 instance sg -> open port 8080 for tcp
+
+	in the browser give password of sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+	install jenkins pluins
+	give username naga
+	psw naga1260
+	and full name
+	email details
+
+	use this repo for jenkins : https://github.com/discover-devops/addressbook.git
+	code is written in java
+	this code is uploaded in github
+	it uses maven tool
 
 
